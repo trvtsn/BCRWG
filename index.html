@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        html, body {
+            margin: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1500px;
+            height: 1250px;
+        }
+
+        .title {
+            font-family: Arial, sans-serif;
+        }
+
+        .wallets-container {
+            gap: 10px;
+            width: 1400px;
+            height: 450px;
+            padding-top: 1.5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-item {
+            background-color: #fafafa;
+            padding: 20px;
+        }
+
+        .top-container {
+            width: 1400px;
+            height: 40px;
+            padding-bottom:8em;
+            padding-top:4em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #b16712;
+        }
+
+        #cryptocurrency-choice-div,
+        #wallet-count-div,
+        #generate-button-div {
+            margin-bottom: 10px; /* Add some spacing between the elements */
+        }
+
+        .textarea-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .generate-button {
+            font-family: Arial, sans-serif;
+            border: none;
+            text-align: center;
+            position: relative;
+            font-size: 14px;
+            width: 185px;
+            height: 40px;
+            color: #ffffff;
+            margin-right: 1em;
+            font-weight: bold;
+            background: #b16712;
+			border-radius: 25px;
+            transition: background .05s ease-in
+        }
+
+        .generate-button:hover{
+            background:#78450c;
+			color: #dbdbdb;
+            transition: background .05s ease-in
+        }
+
+        .grid-button {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+            border: none;
+            margin: 5px;
+            font-size:12px;
+            width:100px;
+            height:30px;
+        }
+
+        [id^="strip-private-keys-"] {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+            border: none;
+            margin: 5px;
+            font-size:12px;
+            width:150px;
+            height:30px;
+        }
+
+        .textarea-classifier {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+        }
+    </style>
+
+    <title>
+        Crypto Wallets Generator
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-container">
+
+            <h1 class="title">Bulk Cryptocurrency Wallet Generator</h1>
+
+            <div id="cryptocurrency-choice-div">
+                <label for="num">Choose cryptocurrency:</label>
+                <select name="cryptocurrency" id="cryptocurrency">
+                <option value="btc-p2pkh">Bitcoin P2PKH (BTC 1...)</option>
+                <option value="btc-p2sh">Bitcoin P2SH (BTC 3...)</option>
+                <option value="btc-bech32">Bitcoin Bech32 (BTC bc1...)</option>
+                <option value="ltc">Litecoin (LTC)</option>
+                <option value="eth">Ethereum (ETH)</option>
+                <option value="xmr">Monero (XMR)</option>
+                </select>
+            </div>
+
+            <div id="wallet-count-div">
+                <label for="num">How many wallets:</label>
+                <input type="number" step="1" id="count" value="1">
+            </div>
+
+            <div id="generate-button-div">
+                <button id="generate" class="generate-button">Generate Wallets</button>
+            </div>
+        </div>
+            
+        <div class="wallets-container">
+            <textarea id="wallets-textarea" class="grid-item" style="display: block; width: 650px; height: 400px; font-family: Arial, sans-serif; font-size: 10px; padding: 15px; border: 3px solid #b16712; resize: none;" readonly=""></textarea>
+            <div class="textarea-buttons">
+                <button id="save-to-file" class="grid-button" disabled="">Save To File</button>
+                <button id="strip-private-keys" class="grid-button" disabled="">Strip Private Keys</button>
+                <button id="clear-all" class="grid-button" disabled="">Clear All</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="bundle.js"></script>
+
+<script>
+</script>
+
+</html>
