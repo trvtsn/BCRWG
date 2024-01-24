@@ -22,7 +22,16 @@ To build BCRWG from source, follow these steps:
    ```bash
    npm install bitcoinjs-lib@4.0.3
    
-3. Modify the monero-javascript library to have the wasm in base64 format. This will eliminate the need for fs.readFileSync to load the wasm necessary for monero wallet generation, as the function only works on servers and not in the browser.
+3. Modify the monero-javascript library to have the wasm in base64 format. This will eliminate the need for fs.readFileSync to load the wasm necessary for monero wallet generation, as the function only works on servers and not in the browser. The node-modules folder in this repository contains the monero-javascript library, which contains the modified code.
+4. Install the browserify package.
+
+   ```bash
+   npm install browserify
+   
+5. Use browserify to generate the bundle.js
+   
+   ```bash
+   npx browserify main.js -o bundle.js 
 
 ## To-Do List
 
